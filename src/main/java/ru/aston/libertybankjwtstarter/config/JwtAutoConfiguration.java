@@ -11,8 +11,6 @@ import ru.aston.libertybankjwtstarter.jwt.JwtProvider;
 @Configuration
 @Slf4j
 @EnableConfigurationProperties(JwtProperties.class)
-@ConditionalOnClass(JwtProperties.class)
-@ConditionalOnProperty(prefix = "application.security.jwt",name = "secret",havingValue = "true")
 public class JwtAutoConfiguration {
 
 

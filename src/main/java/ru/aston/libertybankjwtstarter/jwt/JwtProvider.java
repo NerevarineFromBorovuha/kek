@@ -8,10 +8,8 @@ import java.security.Key;
 import java.util.Date;
 import java.util.UUID;
 import java.util.function.Function;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.aston.libertybankjwtstarter.config.JwtProperties;
 
@@ -20,14 +18,10 @@ import ru.aston.libertybankjwtstarter.config.JwtProperties;
 @Component
 public class JwtProvider {
 
-  //@Value(value = "${application.security.jwt.secret}")
 
-  private JwtProperties key;
+  private final JwtProperties key;
 
-//  public JwtProvider (){
-//
-//  }
-
+  @Autowired
   public JwtProvider (JwtProperties key){
     this.key = key;
   }
